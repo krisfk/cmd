@@ -1,0 +1,19 @@
+git add .
+git commit -am.
+git push -u origin <branch>
+git push -f origin <branch>
+git checkout <code>
+git checkout <branch name>
+git checkout -b <new-branch>
+
+git status
+git branch
+git log
+
+
+echo "# ec2pass" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/krisfk/ec2pass.git
+git push -u origin master

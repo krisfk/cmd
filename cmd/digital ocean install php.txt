@@ -1,0 +1,36 @@
+Droplet Name: ubuntu-s-1vcpu-1gb-lon1-01
+IP Address: 46.101.12.232
+Username: root
+Password: 6d06cf75fb411afb3fdaf0f204
+
+
+Apt-get update
+Apt-get install apache2
+
+apt-get install php-pgsql 
+apt-get install php
+apt autoremove
+apt-get install mysql-server
+//mysql_secure_installation
+nano /etc/apache2/mods-enabled/dir.conf
+//index.php ???
+
+mysql -h localhost -u root -p
+uninstall plugin validate_password;
+
+apt-get install phpmyadmin
+
+
+sudo mysql --user=root mysql
+CREATE USER 'phpmyadmin'@'localhost' IDENTIFIED BY 'some_pass';
+GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+Using sudo, edit /etc/dbconfig-common/phpmyadmin.conf file updating user/password values in the following sections (replacing some_pass by the password used in Step #2):
+# dbc_dbuser: database user
+#       the name of the user who we will use to connect to the database.
+dbc_dbuser='phpmyadmin'
+
+# dbc_dbpass: database user password
+#       the password to use with the above username when connecting
+#       to a database, if one is required
+dbc_dbpass='some_pass'
